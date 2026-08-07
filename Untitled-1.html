@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ENA GREEN - Xuất khẩu hạt điều, gia vị & nông sản cao cấp</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Swiper JS CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <style>
+        .swiper { width: 100%; height: 380px; border-radius: 16px; }
+        @media (min-width: 768px) { .swiper { height: 480px; } }
+        .swiper-slide img { width: 100%; height: 100%; object-fit: cover; }
+        
+        /* Hiệu ứng chuyển động mượt cho ô sản phẩm đè lên nhau */
+        .product-card {
+            transition: all 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .description-fade {
+            opacity: 0;
+            transition: opacity 0.6s ease 0.3s, transform 0.6s ease 0.3s;
+            transform: translateY(12px);
+        }
+
+        .group:hover .description-fade {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Làm mờ các card xung quanh khi đang hover vào 1 card */
+        .product-grid:has(.group:hover) .group:not(:hover) {
+            opacity: 0.35;
+            filter: grayscale(40%);
+            transition: all 0.8s ease;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased">
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50 transition-all">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex flex-col">
+                <a href="#" class="text-2xl font-black text-green-700 tracking-wider">ENA GREEN</a>
+                <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Thành viên ENA GROUP</span>
+            </div>
+            
+            <nav class="hidden lg:flex space-x-8 font-semibold text-xs tracking-wider uppercase">
+                <a href="#about" class="hover:text-green-600 transition">Giới thiệu</a>
+                <a href="#products" class="hover:text-green-600 transition">Sản phẩm</a>
+                <a href="#quality" class="hover:text-green-600 transition">Năng lực & Chất lượng</a>
+                <a href="#services" class="hover:text-green-600 transition">Dịch vụ</a>
+                <a href="#contact" class="hover:text-green-600 transition">Liên hệ</a>
+            </nav>
+
+            <div class="flex items-center space-x-4">
+                <a href="#contact" class="hidden sm:inline-block bg-green-700 text-white text-xs font-bold px-5 py-2.5 rounded-full hover:bg-green-800 transition shadow-sm">
+                    LIÊN HỆ XUẤT KHẨU
+                </a>
+                <button class="lg:hidden text-gray-600 focus:outline-none">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SLIDER SECTION -->
+    <section class="container mx-auto px-4 py-6">
+        <div class="swiper mySwiper shadow-xl overflow-hidden relative">
+            <div class="swiper-wrapper">
+                <!-- Slide 1 -->
+                <div class="swiper-slide relative">
+                    <img src="https://images.unsplash.com/photo-1592419044706-39796d40f98c?q=80&w=1600" alt="Hạt điều ENA GREEN">
+                    <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent flex items-center p-8 md:p-16">
+                        <div class="max-w-xl text-white space-y-4">
+                            <span class="bg-green-600/80 text-white text-xs px-3 py-1 rounded-full uppercase tracking-wider font-bold">Xuất Khẩu Hạt Điều</span>
+                            <h1 class="text-3xl md:text-5xl font-extrabold leading-tight">Đối tác xuất khẩu nông sản đáng tin cậy từ Việt Nam</h1>
+                            <p class="text-sm md:text-base text-gray-200">Cung cấp hạt điều, gia vị & thực phẩm đạt tiêu chuẩn quốc tế với chuỗi cung ứng ổn định.</p>
+                            <div class="pt-2 flex gap-4">
+                                <a href="#products" class="bg-green-600 hover:bg-green-700 text-white font-bold text-xs px-6 py-3 rounded-full transition">XEM SẢN PHẨM</a>
+                                <a href="#contact" class="border border-white hover:bg-white hover:text-gray-900 text-white font-bold text-xs px-6 py-3 rounded-full transition">LIÊN HỆ NHẬP KHẨU</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="swiper-slide relative">
+                    <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?q=80&w=1600" alt="Gia vị ENA GREEN">
+                    <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent flex items-center p-8 md:p-16">
+                        <div class="max-w-xl text-white space-y-4">
+                            <span class="bg-green-600/80 text-white text-xs px-3 py-1 rounded-full uppercase tracking-wider font-bold">Gia Vị & Nông Sản</span>
+                            <h2 class="text-3xl md:text-5xl font-extrabold leading-tight">Gia vị thơm ngon đậm đà bản sắc Việt</h2>
+                            <p class="text-sm md:text-base text-gray-200">Tiêu, quế, hồi, ớt khô sấy khô đạt chuẩn ISO, HACCP, FDA cho thị trường Mỹ & EU.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+    <!-- LAYOUT CHÍNH: 5 CỘT (Cột trái 4/5, Cột sidebar 1/5) -->
+    <main class="container mx-auto px-4 py-10">
+        <div class="grid grid-cols-1 lg:grid-cols-5 gap-10">
+
+            <!-- CỘT CHÍNH (4/5) -->
+            <div class="lg:col-span-4 space-y-16">
+
+                <!-- 2. GIỚI THIỆU & ENA GROUP -->
+                <section id="about" class="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm space-y-6">
+                    <div class="border-l-4 border-green-600 pl-4">
+                        <span class="text-xs font-bold text-green-700 uppercase tracking-widest">Về Chúng Tôi</span>
+                        <h2 class="text-2xl md:text-3xl font-extrabold text-gray-900">ENA GREEN CO., LTD</h2>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">
+                        <strong>ENA GREEN</strong> là công ty thành viên thuộc <strong>ENA GROUP</strong>, hoạt động chuyên sâu trong lĩnh vực sản xuất, chế biến và thương mại quốc tế các sản phẩm nông sản cao cấp. Chúng tôi xây dựng chuỗi cung ứng khép kín từ khâu nguyên liệu $\rightarrow$ sản xuất $\rightarrow$ kiểm soát chất lượng $\rightarrow$ xuất khẩu, đảm bảo nguồn cung ổn định và chất lượng vượt trội cho khách hàng toàn cầu.
+                    </p>
+
+                    <!-- Lợi thế thừa hưởng -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-4">
+                        <div class="bg-green-50 p-4 rounded-xl border border-green-100 flex items-start space-x-3">
+                            <i class="fas fa-layer-group text-green-700 text-xl mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-sm text-green-900">Nguồn Lực Mạnh Mẽ</h4>
+                                <p class="text-xs text-green-800 mt-1">Năng lực cung ứng quy mô lớn từ ENA GROUP.</p>
+                            </div>
+                        </div>
+                        <div class="bg-green-50 p-4 rounded-xl border border-green-100 flex items-start space-x-3">
+                            <i class="fas fa-cogs text-green-700 text-xl mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-sm text-green-900">Kinh Nghiệm Vận Hành</h4>
+                                <p class="text-xs text-green-800 mt-1">Quy trình sản xuất & chứng từ quốc tế chuẩn xác.</p>
+                            </div>
+                        </div>
+                        <div class="bg-green-50 p-4 rounded-xl border border-green-100 flex items-start space-x-3">
+                            <i class="fas fa-globe-americas text-green-700 text-xl mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-sm text-green-900">Mạng Lưới Toàn Cầu</h4>
+                                <p class="text-xs text-green-800 mt-1">Đối tác chiến lược tại Mỹ, EU, Trung Đông & Châu Á.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 4 & 5. TẦM NHÌN, SỨ MỆNH & GIÁ TRỊ CỐT LÕI -->
+                <section class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-gradient-to-br from-green-800 to-green-950 text-white p-8 rounded-2xl shadow-md space-y-4">
+                        <h3 class="text-xl font-bold uppercase tracking-wider text-green-400 border-b border-green-700 pb-2">Tầm Nhìn & Sứ Mệnh</h3>
+                        <p class="text-sm leading-relaxed text-gray-200">
+                            <strong>Tầm nhìn:</strong> Trở thành thương hiệu uy tín toàn cầu trong lĩnh vực xuất khẩu hạt điều, gia vị và thực phẩm, đại diện cho chất lượng nông sản Việt Nam.
+                        </p>
+                        <p class="text-sm leading-relaxed text-gray-200">
+                            <strong>Sứ mệnh:</strong> Nâng cao giá trị nông sản Việt, cung cấp sản phẩm chuẩn quốc tế và xây dựng chuỗi cung ứng minh bạch, bền vững.
+                        </p>
+                    </div>
+
+                    <div class="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm space-y-4">
+                        <h3 class="text-xl font-bold uppercase tracking-wider text-green-700 border-b border-gray-200 pb-2">Giá Trị Cốt Lõi</h3>
+                        <ul class="space-y-3 text-sm text-gray-600">
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-600 mr-3"></i> <strong>Chất lượng:</strong> Cam kết tiêu chuẩn khắt khe nhất.</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-600 mr-3"></i> <strong>Uy tín:</strong> Hợp tác lâu dài, đáng tin cậy.</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-600 mr-3"></i> <strong>Trách nhiệm:</strong> Tận tâm với khách hàng & cộng đồng.</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-green-600 mr-3"></i> <strong>Bền vững:</strong> Phát triển hài hòa cùng hệ sinh thái.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- 6. DANH MỤC SẢN PHẨM NỔI BẬT (HOVER EFFECT CHE PHỦ CỘT ĐỐI DIỆN) -->
+                <section id="products" class="space-y-8">
+                    <div class="flex justify-between items-end border-b-2 border-green-600 pb-2">
+                        <div>
+                            <span class="text-xs font-bold text-green-600 uppercase">Danh Mục Xuất Khẩu</span>
+                            <h2 class="text-2xl font-black text-gray-900 uppercase">6. Sản Phẩm ENA GREEN</h2>
+                        </div>
+                    </div>
+
+                    <!-- Grid Sản Phẩm Mở Rộng Kèm Hiệu Ứng Overlay Slow Motion -->
+                    <div class="product-grid grid grid-cols-1 md:grid-cols-2 gap-6 relative min-h-[480px]">
+                        
+                        <!-- 6.1 Hạt Điều Xuất Khẩu -->
+                        <div class="group relative h-full">
+                            <div class="product-card bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-md
+                                        group-hover:absolute group-hover:inset-0 group-hover:z-50 
+                                        group-hover:scale-[1.02] group-hover:border-green-600 group-hover:shadow-2xl
+                                        flex flex-col md:flex-row h-full">
+                                
+                                <div class="w-full h-[200px] md:h-full group-hover:md:w-1/2 transition-all duration-700">
+                                    <img src="https://thumbs.dreamstime.com/b/roasted-cashew-nuts-halves-wooden-bowl-table-top-view-macro-studio-shot-homemade-roasted-salted-cashews-basket-283770174.jpg" 
+                                         alt="Hạt điều xuất khẩu" class="w-full h-full object-cover">
+                                </div>
+
+                                <div class="p-6 bg-white flex flex-col justify-center w-full group-hover:md:w-1/2">
+                                    <span class="text-green-600 text-xs font-bold uppercase">Cashew Kernels</span>
+                                    <h3 class="font-bold text-xl uppercase mt-1">6.1 Hạt Điều Xuất Khẩu</h3>
+                                    <p class="text-xs text-gray-500 mt-1">White Whole (WW180-WW450), SW, Pieces (LP/SP/BB), Organic & Raw</p>
+                                    
+                                    <div class="hidden group-hover:block description-fade mt-4">
+                                        <p class="text-xs text-gray-600 leading-relaxed border-t pt-3">
+                                            <strong>Thông số kỹ thuật:</strong> Độ ẩm $\le 5\%$, Tạp chất $\le 0.5\%$.<br>
+                                            <strong>Đóng gói:</strong> Hút chân không, Lon thiếc, Thùng carton hoặc bao bì OEM theo yêu cầu khách hàng.
+                                        </p>
+                                        <a href="#contact" class="inline-block mt-4 bg-green-700 text-white px-5 py-2 rounded-full text-xs font-bold">NHẬN BÁO GIÁ BULK</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 6.2 Hạt Điều Chế Biến -->
+                        <div class="group relative h-full">
+                            <div class="product-card bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-md
+                                        group-hover:absolute group-hover:inset-0 group-hover:z-50 
+                                        group-hover:scale-[1.02] group-hover:border-green-600 group-hover:shadow-2xl
+                                        flex flex-col md:flex-row h-full">
+                                
+                                <div class="w-full h-[200px] md:h-full group-hover:md:w-1/2 transition-all duration-700">
+                                    <img src="https://jraifarm.com/files/upload/images/hat%20dieu/hat%20dieu%20dac%20san%20o%20dau%20(2).jpg" 
+                                         alt="Hạt điều rang muối" class="w-full h-full object-cover">
+                                </div>
+
+                                <div class="p-6 bg-white flex flex-col justify-center w-full group-hover:md:w-1/2">
+                                    <span class="text-green-600 text-xs font-bold uppercase">Processed Cashew</span>
+                                    <h3 class="font-bold text-xl uppercase mt-1">6.2 Hạt Điều Chế Biến</h3>
+                                    <p class="text-xs text-gray-500 mt-1">Rang muối, tẩm vị (Mật ong, Wasabi, Phô mai), Mixed Nuts</p>
+                                    
+                                    <div class="hidden group-hover:block description-fade mt-4">
+                                        <p class="text-xs text-gray-600 leading-relaxed border-t pt-3">
+                                            Chế biến theo phương pháp hiện đại giữ trọn độ giòn và hương vị tự nhiên. Hỗ trợ đóng gói OEM / Private Label trọn gói cho bán lẻ.
+                                        </p>
+                                        <a href="#contact" class="inline-block mt-4 border border-green-700 text-green-700 px-5 py-2 rounded-full text-xs font-bold">TƯ VẤN OEM</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- 6.3 Gia Vị & 6.4 Hạt Khác -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm hover:border-green-500 transition">
+                            <div class="flex items-center space-x-4 mb-3">
+                                <i class="fas fa-pepper-hot text-2xl text-red-600"></i>
+                                <h3 class="font-bold text-lg text-gray-900">6.3 Gia Vị (Spices)</h3>
+                            </div>
+                            <p class="text-xs text-gray-600 leading-relaxed">
+                                Tiêu đen / tiêu trắng, Ớt khô & bột, Quế, Hồi, Gừng/Tỏi sấy, Gia vị xay & phối trộn xuất khẩu số lượng lớn (Bulk Export / OEM).
+                            </p>
+                        </div>
+
+                        <div class="bg-white p-6 rounded-2xl border border-gray-200 shadow-sm hover:border-green-500 transition">
+                            <div class="flex items-center space-x-4 mb-3">
+                                <i class="fas fa-seedling text-2xl text-amber-600"></i>
+                                <h3 class="font-bold text-lg text-gray-900">6.4 Hạt & Bánh Kẹo</h3>
+                            </div>
+                            <p class="text-xs text-gray-600 leading-relaxed">
+                                Hạnh nhân, Óc chó, Mắc ca, Đậu phộng, Hỗn hợp hạt snack & Bánh kẹo đóng gói cao cấp / Bộ quà tặng doanh nghiệp.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 7 & 8. NĂNG LỰC, CHỨNG NHẬN & THỊ TRƯỜNG -->
+                <section id="quality" class="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm space-y-8">
+                    <div class="border-l-4 border-green-600 pl-4">
+                        <span class="text-xs font-bold text-green-600 uppercase">Tiêu Chuẩn Quốc Tế</span>
+                        <h2 class="text-2xl font-bold text-gray-900">7. Năng Lực, Chất Lượng & Thị Trường</h2>
+                    </div>
+
+                    <!-- Chứng nhận -->
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div class="p-4 bg-gray-50 rounded-xl border">
+                            <i class="fas fa-award text-3xl text-green-700 mb-2"></i>
+                            <h4 class="font-bold text-sm">HACCP</h4>
+                            <p class="text-[10px] text-gray-500">An toàn thực phẩm</p>
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-xl border">
+                            <i class="fas fa-certificate text-3xl text-green-700 mb-2"></i>
+                            <h4 class="font-bold text-sm">ISO 22000</h4>
+                            <p class="text-[10px] text-gray-500">Quản lý chất lượng</p>
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-xl border">
+                            <i class="fas fa-globe-americas text-3xl text-green-700 mb-2"></i>
+                            <h4 class="font-bold text-sm">FDA Standard</h4>
+                            <p class="text-[10px] text-gray-500">Tiêu chuẩn Mỹ</p>
+                        </div>
+                        <div class="p-4 bg-gray-50 rounded-xl border">
+                            <i class="fas fa-check-double text-3xl text-green-700 mb-2"></i>
+                            <h4 class="font-bold text-sm">EU Standards</h4>
+                            <p class="text-[10px] text-gray-500">Tiêu chuẩn Châu Âu</p>
+                        </div>
+                    </div>
+
+                    <!-- Thị trường xuất khẩu -->
+                    <div id="services" class="pt-4 border-t">
+                        <h3 class="font-bold text-sm uppercase tracking-wider text-gray-700 mb-4">8. Thị trường xuất khẩu mục tiêu</h3>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="bg-green-100 text-green-800 text-xs font-bold px-4 py-2 rounded-full"><i class="fas fa-flag-usa mr-2"></i>Mỹ (USA)</span>
+                            <span class="bg-blue-100 text-blue-800 text-xs font-bold px-4 py-2 rounded-full"><i class="fas fa-globe-europe mr-2"></i>Châu Âu (EU)</span>
+                            <span class="bg-amber-100 text-amber-800 text-xs font-bold px-4 py-2 rounded-full"><i class="fas fa-building mr-2"></i>Trung Đông</span>
+                            <span class="bg-purple-100 text-purple-800 text-xs font-bold px-4 py-2 rounded-full"><i class="fas fa-map-marker-alt mr-2"></i>Châu Á</span>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+
+            <!-- CỘT SIDEBAR (1/5) -->
+            <div class="lg:col-span-1 space-y-6">
+                
+                <!-- Box ENA GROUP -->
+                <div class="bg-green-800 text-white p-5 rounded-2xl shadow-md space-y-2">
+                    <span class="text-[10px] uppercase font-bold text-green-300">Công Ty Mẹ</span>
+                    <h3 class="font-bold text-base border-b border-green-600 pb-2">ENA GROUP</h3>
+                    <p class="text-[11px] leading-relaxed text-gray-200">
+                        Hệ sinh thái doanh nghiệp hoạt động bền vững trong nông nghiệp, thực phẩm & thương mại quốc tế.
+                    </p>
+                </div>
+
+                <!-- Box Máy móc sản xuất -->
+                <div class="bg-white p-4 rounded-2xl border border-gray-200 shadow-sm space-y-3">
+                    <h3 class="font-bold text-xs uppercase text-gray-500">Hệ thống sản xuất</h3>
+                    <div class="h-32 rounded-lg overflow-hidden bg-gray-100">
+                        <img src="https://inuytin.com/wp-content/uploads/2021/06/quy-trinh-san-xuat-hat-dieu.jpg" 
+                             alt="Quy trình sản xuất ENA GREEN" class="w-full h-full object-cover">
+                    </div>
+                    <p class="text-[10px] text-gray-500 leading-tight">Dây chuyền bóc vỏ & phân loại bằng máy tự động hiện đại.</p>
+                </div>
+
+                <!-- Download & Tải liệu -->
+                <div class="space-y-3">
+                    <a href="#" class="flex items-center p-3 bg-white border border-gray-200 rounded-xl hover:border-green-600 hover:shadow-md transition group">
+                        <i class="fas fa-file-pdf text-red-500 mr-3 text-lg group-hover:scale-110 transition"></i>
+                        <div>
+                            <div class="text-[11px] font-bold text-gray-800">TẢI CATALOGUE</div>
+                            <div class="text-[9px] text-gray-400">PDF File (12MB)</div>
+                        </div>
+                    </a>
+                    <a href="#" class="flex items-center p-3 bg-white border border-gray-200 rounded-xl hover:border-green-600 hover:shadow-md transition group">
+                        <i class="fas fa-building text-blue-500 mr-3 text-lg group-hover:scale-110 transition"></i>
+                        <div>
+                            <div class="text-[11px] font-bold text-gray-800">PROFILE CÔNG TY</div>
+                            <div class="text-[9px] text-gray-400">Xem hồ sơ năng lực</div>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- 9 & 11. DỊCH VỤ VÀ LIÊN HỆ -->
+        <section id="contact" class="mt-16 bg-gradient-to-br from-gray-900 to-green-950 text-white rounded-3xl p-8 md:p-12 shadow-2xl">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div class="space-y-6">
+                    <span class="text-xs font-bold text-green-400 uppercase tracking-widest">Hợp Tác Xuất Khẩu</span>
+                    <h2 class="text-3xl font-black uppercase">Liên Hệ ENA GREEN</h2>
+                    <p class="text-sm text-gray-300 leading-relaxed">
+                        Hợp tác cùng đối tác uy tín được bảo chứng bởi ENA GROUP. Chúng tôi hỗ trợ trọn gói OEM, Private Label & chứng từ xuất khẩu quốc tế.
+                    </p>
+
+                    <div class="space-y-3 pt-2 text-sm text-gray-300">
+                        <p class="flex items-center"><i class="fas fa-building text-green-400 w-6"></i> <strong>ENA GREEN CO., LTD</strong> (Thành viên ENA GROUP)</p>
+                        <p class="flex items-center"><i class="fas fa-map-marker-alt text-green-400 w-6"></i> Việt Nam</p>
+                        <p class="flex items-center"><i class="fas fa-phone text-green-400 w-6"></i> (+84) xxx xxx XXX</p>
+                        <p class="flex items-center"><i class="fas fa-envelope text-green-400 w-6"></i> info@enagreen.com</p>
+                        <p class="flex items-center"><i class="fas fa-globe text-green-400 w-6"></i> www.enagreen.com</p>
+                    </div>
+                </div>
+
+                <!-- Form gửi thông tin -->
+                <form class="bg-white text-gray-800 p-6 rounded-2xl space-y-4 shadow-lg">
+                    <h3 class="font-bold text-lg text-gray-900 mb-2">Gửi yêu cầu báo giá (RFQs)</h3>
+                    <div>
+                        <input type="text" placeholder="Họ và tên của bạn *" class="w-full text-xs p-3 border border-gray-200 rounded-lg focus:outline-none focus:border-green-600" required>
+                    </div>
+                    <div>
+                        <input type="email" placeholder="Email doanh nghiệp *" class="w-full text-xs p-3 border border-gray-200 rounded-lg focus:outline-none focus:border-green-600" required>
+                    </div>
+                    <div>
+                        <select class="w-full text-xs p-3 border border-gray-200 rounded-lg focus:outline-none focus:border-green-600 text-gray-500">
+                            <option>Sản phẩm quan tâm (Hạt điều / Gia vị / OEM...)</option>
+                            <option>6.1 Hạt điều xuất khẩu (Kernels)</option>
+                            <option>6.2 Hạt điều chế biến / OEM</option>
+                            <option>6.3 Gia vị các loại (Spices)</option>
+                            <option>6.4 Hạt & Bánh kẹo khác</option>
+                        </select>
+                    </div>
+                    <div>
+                        <textarea placeholder="Chi tiết số lượng & thị trường nhập khẩu..." rows="3" class="w-full text-xs p-3 border border-gray-200 rounded-lg focus:outline-none focus:border-green-600"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-green-700 hover:bg-green-800 text-white text-xs font-bold py-3 rounded-lg transition uppercase tracking-wider">
+                        GỬI YÊU CẦU BÁO GIÁ
+                    </button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-950 text-gray-400 py-8 border-t border-gray-800">
+        <div class="container mx-auto px-4 text-center text-xs space-y-2">
+            <p class="font-bold text-gray-300">ENA GREEN CO., LTD - Member of ENA GROUP Ecosystem</p>
+            <p>&copy; 2026 ENA GREEN. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- SWIPER JS INIT -->
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            loop: true,
+            speed: 1200,
+            autoplay: {
+                delay: 4500,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+    </script>
+</body>
+</html>
